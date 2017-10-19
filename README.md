@@ -1,5 +1,5 @@
 # Digit Recognizing Project
-My name is Adrian Sypos, and I am a final year student of Software Development in GMIT.
+My name is Adrian Sypos, and I am a final year student of the [B.Sc. (Hons) in Software Development](https://www.gmit.ie/software-development/bachelor-science-honours-software-development) at [GMIT](http://www.gmit.ie/).
 
 As part of the module called [Emerging Technologies](https://emerging-technologies.github.io/), we have been asked to develop a web application in Python that will allow user to submit or draw an image containing a single digit. The application then should respond with the digit contained in the image. I will develop that project using [TensorFlow](https://www.tensorflow.org/) and [Keras Library](https://keras.io/). Wrapped into a web app using [Flask Micro Framework](http://flask.pocoo.org/).
 
