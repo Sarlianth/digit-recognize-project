@@ -30,6 +30,7 @@
 	   			$('#result').text('Predicting...');
 	   			var $SCRIPT_ROOT = {{request.script_root|tojson|safe}};
 	   			var canvasObj = document.getElementById("canvas");
+				<!--https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL-->
 	   			var img = canvasObj.toDataURL('image/png');
 	   			$.ajax({
 	   				type: "POST",
