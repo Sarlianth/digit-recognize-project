@@ -2,15 +2,12 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Handwritten Digit Recognition using Neural Networks</title>
+	<title>Digit Recognition using Neural Networks</title>
 	<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 </head>
 
 <body>
-		<h1>Handwritten Digit Recognition using Neural Networks</h1>
-		</br></br></br></br>
-		<div class="centered"><h1>Student name - Adrian Sypos (G00309646)</br>
-		This is a project for the module Emerging Technologies for 2017. </br>This project is worth 40% of your marks for the module.</h1></div></br>
+		<h1>Digit Recognition using Neural Networks</h1>
 
 		<div class="centered">
 			<canvas id="canvas" width="280" height="280"></canvas>
@@ -33,7 +30,6 @@
 	   			$('#result').text('Predicting...');
 	   			var $SCRIPT_ROOT = {{request.script_root|tojson|safe}};
 	   			var canvasObj = document.getElementById("canvas");
-				<!--https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toDataURL-->
 	   			var img = canvasObj.toDataURL('image/png');
 	   			$.ajax({
 	   				type: "POST",
@@ -45,5 +41,9 @@
 	   			});
 	   		});
 	   </script>
+	   
+	   </br></br></br></br>
+		<div class="centered"><h1>Student name - Adrian Sypos (G00309646)</br>
+		This is a project for the module Emerging Technologies for 2017. </br>This project is worth 40% of your marks for the module.</h1></div></br>
 </body>
 </html>

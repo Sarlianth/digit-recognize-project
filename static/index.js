@@ -10,7 +10,7 @@
 	context.fillRect(0, 0, canvas.width, canvas.height);
 	context.color = "black";
 	context.lineWidth = 7;
-    context.lineJoin = 'round';
+    context.lineJoin = context.lineCap = 'round';
 	
 	debug();
 
