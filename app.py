@@ -1,8 +1,14 @@
 from flask import Flask, render_template, request
-import os
-import re
-import base64
+import os, re, base64
+import keras.models, sys
+import numpy as np
+from scipy.misc import imsave, imread, imresize
+sys.path.append(os.path.abspath("./model"))
+from load import *
 app = Flask(__name__)
+
+global model, graph
+model, graph = init()
 
 @app.route("/")
 def index():
@@ -10,8 +16,28 @@ def index():
 	
 @app.route('/predict/', methods=['GET','POST'])
 def predict():
-    # get data from drawing canvas and save as image
+    # get data from canvas and save as an image
     parseImage(request.get_data())
+	
+    # read parsed image back in 8-bit, black and white mode (L)
+    x = imread('output.png', mode='L')
+    x = np.invert(x)
+    x = imresize(x,(28,28))
+	
+    # reshape image data for use in neural network
+    x = x.reshape(1,28,28,1)
+
+    # graph.as_default() overrides the current default graph for the lifetime of the context
+    with graph.as_default():
+        # generates output predictions for the input x
+        out = model.predict(x)
+        print(out)
+        # returns the indices of the maximum values along an axis
+        print(np.argmax(out, axis=1))
+        # return a string representation of the data in an array
+        response = np.array_str(np.argmax(out, axis=1))
+        # return the response
+        return response 
 
 def parseImage(imgData):
     # parse canvas bytes and save as output.png
