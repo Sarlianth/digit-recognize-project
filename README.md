@@ -5,6 +5,8 @@ As part of the module called [Emerging Technologies](https://emerging-technologi
 
 Complete instructions to the problem can be found [here](https://emerging-technologies.github.io/problems/project.html). That project is worth 40% of the marks for this module.
 
+Please also see the [Wiki](https://github.com/Sarlianth/digit-recognize-project/wiki) for more information.
+
 ## How to clone this repository
 1. In the Clone with HTTPs section, copy the clone URL for the repository.
 2. Open Git Bash.
@@ -13,10 +15,37 @@ Complete instructions to the problem can be found [here](https://emerging-techno
 5. Press Enter. Your local clone will be created.
 
 ## Dependencies
-TBC
+#### Python
+First of all you need Python, if you already have it, please skip this part and continue on.
+If you're running Windows: the most stable Windows downloads are available from the [Python for Windows](https://www.python.org/downloads/windows/) page. Please download the latest release and continue on.
+If you are using a Mac, see the [Python for Mac OS X](https://www.python.org/downloads/mac-osx/) page.
+For other systems, or if you want to install from source, see the [general download page](https://www.python.org/downloads/).
+
+#### Pip
+If you're running Python 2.7.9+ or Python 3.4+ you should already have pip installed. If you do not, please see steps above on how to download Python - you will need it to run this solution.
+
+#### Packages
+You will need the packages listed below to be able to run this program. To install those, open your CMD and run the following command for each of them: `pip3 install [name of dependency]`
+* numpy
+* scipy
+* Flask
+* Keras
+* tensorflow
+* Pillow
+* h5py
 
 ## How to run the application
-TBC
+To run the application you should follow the following steps: 
+	1. Clone this repository [see above]
+	2. Install all dependencies listed above (using pip3 or conda)
+	3. `cd` into the root folder of the project
+	4. Run the following command `python app.py`
+	5. Open your favourite browser and go to the following address: `http://localhost:5000/`
 
 ## References
-TBC
+https://elitedatascience.com/keras-tutorial-deep-learning-in-python
+https://gist.github.com/fchollet/0830affa1f7f19fd47b06d4cf89ed44d
+https://www.tensorflow.org/api_docs/python/tf/get_default_graph
+https://www.reddit.com/r/MachineLearning/comments/3y84hr/how_does_adam_compare_to_adadelta/
+https://keras.io/backend/
+
