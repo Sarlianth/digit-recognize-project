@@ -1,14 +1,24 @@
+# Adrian Sypos - G00309646
+# Below are the sources from where I have adapted some of the code for this project
+# http://www.williammalone.com/articles/create-html5-canvas-javascript-drawing-app/
+# https://stackoverflow.com/questions/41957490/send-canvas-image-data-uint8clampedarray-to-flask-server-via-ajax
+# http://flask.pocoo.org/docs/0.12/patterns/fileuploads/
+# https://nextjournal.com/a/17592186058848
+# https://www.tensorflow.org/get_started/mnist/beginners
+
 from flask import Flask, render_template, request, redirect, url_for
 import os, re, base64
 import keras.models, sys
 import numpy as np
 from scipy.misc import imsave, imread, imresize
+# importing load.py from model folder for initializing the model
 sys.path.append(os.path.abspath("./model"))
 from load import *
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 
+# global variables for model and graph
 global model, graph
 model, graph = init()
 
